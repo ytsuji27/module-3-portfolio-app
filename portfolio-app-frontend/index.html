@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <title>Portfolio App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="styles/footer-distributed-with-contact-form.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  </head>
+
+
+  <body>
+    <div id="page-container">
+
+      <!-- Header -->
+      <div class="header">
+        <h1>Not Instagram</h1>
+      </div>
+
+
+      <!-- Photos -->
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div id="allPhotos">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Photo Form -->
+      <div class="newPhotoForm">
+        <form id="newPhoto">
+          <h5>Add a new Photo!</h5>
+          <label for="caption">Caption</label>
+          <input type="caption" id="inputCaption" placeholder="Caption"><br>
+          <label for="user">User</label>
+          <input type="file" id="photo_source" accept="image/jpeg">
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+
+      <!-- Login Page Overlay -->
+      <div id="loginPage" class="overlay text-center">
+        <form id ="loginForm" class="form-signin">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="inputName" class="sr-only">Name</label>
+          <input type="name" id="inputName" class="form-control" placeholder="Name"><br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+      </div>
+
+      <!-- Show Photo Page Overlay -->
+      <div id="showPhoto" class="overlay">
+      </div>
+
+
+      <!-- Footer -->
+      <footer class="footer-distributed">
+
+        <div class="footer-left">
+  				<h3>Not<span>Instagram</span></h3>
+  				<div class="footer-icons">
+  					<a><i id="facebook" class="fa fa-facebook"></i></a>
+  					<a><i id="twitter" class="fa fa-twitter"></i></a>
+  					<a><i id="linkedin" class="fa fa-linkedin"></i></a>
+  					<a><i id="github" class="fa fa-github"></i></a>
+  					<a><i id="instagram" class="fa fa-instagram"></i></a>
+  				</div>
+  			</div>
+
+  			<div class="footer-right">
+  				<p>Contact Me</p>
+  				<form id="contactForm" action="#" method="post">
+  					<input type="text" name="email" placeholder="Email" />
+  					<textarea name="message" placeholder="Message"></textarea>
+  					<button>Send</button>
+  				</form>
+          <span>Please Don't<span>
+  			</div>
+  		</footer>
+
+
+
+    <script defer type="text/javascript" src='src/index.js'></script>
+    <script defer type="text/javascript" src='src/footer.js'></script>
+    </div>
+  </body>
+</html>
