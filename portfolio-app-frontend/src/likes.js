@@ -1,7 +1,8 @@
 console.log('likes.js running...')
 
 //// ----------  CONSTANTS  ---------- ////
-const LIKE_URL = "http://localhost:3000/api/v1/likes";
+// const LIKE_URL = "http://localhost:3000/api/v1/likes";
+const LIKE_URL = "https://glacial-cove-71236.herokuapp.com/api/v1/likes";
 let results = []; // Will store likes for photo
 let alreadyLiked = false; // Status if current user has already liked current photo
 
@@ -18,7 +19,7 @@ class Likes {
   // Returns only likes for the photo
   static likeFilter(likes, photo) {
     if (likes.length !== 0) {
-      results = likes.filter(like => like.photo_id === photo.id);
+      results = likes.filter(like => like.photo_id === photo.photo.id);
       let numberLikes = results.length;
       Likes.setLikes(numberLikes);
       let liked = results.filter(like => like.user_id === currentUser.id);

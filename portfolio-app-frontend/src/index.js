@@ -11,8 +11,10 @@ const greeting = document.getElementById("greeting");
 const newPhotoDiv = document.getElementById("newPhotoDiv");
 const logoutOption = document.getElementById("logoutOption");
 const newPhotoCard = document.getElementById("newPhotoCard");
-const PHOTOS_URL = "http://localhost:3000/api/v1/photos";
-const USERS_URL = "http://localhost:3000/api/v1/users";
+// const PHOTOS_URL = "http://localhost:3000/api/v1/photos";
+const PHOTOS_URL = "https://glacial-cove-71236.herokuapp.com/api/v1/photos";
+// const USERS_URL = "http://localhost:3000/api/v1/users";
+const USERS_URL = "https://glacial-cove-71236.herokuapp.com/api/v1/users";
 const fetchHeaders = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -81,21 +83,22 @@ function showPhotoPage(ev, photo) {
   // Creating main <div class="photo-card">
   let photoCard = document.createElement('div');
   photoCard.classList.add('photo-card');
-  photoCard.setAttribute("photo-id", photo.id);
+  photoCard.setAttribute("photo-id", photo.photo.id);
   // Creating <img>
   let img = document.createElement('img');
-  img.src = photo.photo_source;
+  img.src = photo.url;
   // Create wrapper for text
   let wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
   // Creating <div>Caption
   let caption = document.createElement('div');
   caption.id = 'caption';
-  caption.textContent = `Caption: ${photo.caption}`;
+  caption.textContent = `Caption: ${photo.photo.caption}`;
   // Creating <div>Photographer
   let photographer = document.createElement('div');
   photographer.id = 'photographer';
-  photographer.textContent = `Photo by: ${photo.user.name}`;
+  photographerUser = users.filter(user => user.id === photo.photo.user_id)[0];
+  photographer.textContent = `Photo by: ${photographerUser.name}`;
   // Creating <div>Likes
   let likes = document.createElement('div');
   likes.id = 'likes';
@@ -105,7 +108,7 @@ function showPhotoPage(ev, photo) {
     </button>
     <span>0</span><span> Likes</span>
   `
-  likes.firstElementChild.addEventListener('click', (ev) => Likes.liked(ev))
+  likes.firstElementChild.firstElementChild.addEventListener('click', (ev) => Likes.liked(ev))
   // Putting it altogether
   wrapper.append(caption, photographer);
   photoCard.append(img, wrapper, likes);
@@ -149,7 +152,7 @@ function displayPhoto(photo) {
   galleryCard.classList.add('gallery-card');
   galleryCard.classList.add('gallery-item');
   let img = document.createElement('img');
-  img.src = photo.photo_source;
+  img.src = photo.url;
   img.classList.add('gallery-img');
   galleryCard.appendChild(img);
   galleryCard.addEventListener('click', (ev) => showPhotoPage(ev, photo))
@@ -160,7 +163,6 @@ function displayPhoto(photo) {
 // Create a new Photo
 function createPhoto(ev) {
   ev.preventDefault();
-
   let formData = new FormData();
   formData.append('caption', ev.target[1].value);
   formData.append('user', currentUser.name);
@@ -194,16 +196,18 @@ function login(ev) {
     .then(data => {
       users.push(data);
       currentUser = data;
-      console.log(`Logged in as ${data.name}`);
-      greeting.textContent = `Welcome, ${data.name}`;
-      logoutOption.textContent = `Not ${data.name}? Logout`;
+      console.log(`Logged in as ${currentUser.name}`);
+      greeting.textContent = `Welcome, ${currentUser.name}`;
+      logoutOption.textContent = `Not ${currentUser.name}? Logout`;
+      hideLoginPage();
     })
+  } else {
+    currentUser = foundUser;
+    console.log(`Logged in as ${currentUser.name}`);
+    greeting.textContent = `Welcome, ${currentUser.name}`;
+    logoutOption.textContent = `Not ${currentUser.name}? Logout`;
+    hideLoginPage();
   }
-  currentUser = foundUser;
-  console.log(`Logged in as ${currentUser.name}`);
-  greeting.textContent = `Welcome, ${currentUser.name}`;
-  logoutOption.textContent = `Not ${currentUser.name}? Logout`;
-  hideLoginPage();
 }
 
 // Logout (Clears current user)

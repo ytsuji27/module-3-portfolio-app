@@ -1,7 +1,8 @@
 console.log('comments.js running...')
 
 //// ----------  CONSTANTS  ---------- ////
-const COMMENTS_URL = "http://localhost:3000/api/v1/comments";
+// const COMMENTS_URL = "http://localhost:3000/api/v1/comments";
+const COMMENTS_URL = "https://glacial-cove-71236.herokuapp.com/api/v1/comments";
 const commentsDiv = document.getElementById("comments");
 let photoCard;  // Assigned when shown commentIterator
 let commentList; //
@@ -33,7 +34,7 @@ class Comment {
     commentList.classList.add('comment-list');
     // Filter all comments based on photo id
     if (comments.length !== 0) {
-      let results = comments.filter(comment => comment.photo_id === photo.id);
+      let results = comments.filter(comment => comment.photo_id === photo.photo.id);
       // Iterate through comments and return <li>
       for (const comment of results) {
         let commentLine = Comment.createNewComment(comment);
