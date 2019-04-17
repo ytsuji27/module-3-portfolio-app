@@ -9,7 +9,7 @@ These are the key features and functionality built into the website:
 * Add a comment to a photo
 * Like/Dislike a photo
 
-![Show Photo Page] (https://github.com/ytsuji27/module-3-portfolio-app/tree/master/portfolio-app-backend/portfolio-app/app/assets/screenshots/showPhoto.png)
+![Show Photo Page](https://github.com/ytsuji27/module-3-portfolio-app/tree/master/portfolio-app-backend/portfolio-app/app/assets/screenshots/showPhoto.png)
 
 ## Contributing
 Contributions are welcome in all shapes and forms, especially bug fixes and feature additions.
