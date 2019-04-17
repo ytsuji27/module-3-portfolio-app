@@ -9,12 +9,11 @@ class Api::V1::PhotosController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:photo][:user]) || User.create(name: params[:photo][:user])
-    byebug
+    user = User.find_by(name: params[:user]) || User.create(name: params[:user])
     @photo = Photo.create!({user: user})
-    @photo.caption = params[:photo][:caption]
-    @photo.photo_source.attach(params[:photo][:photo_source])
-    byebug
+    @photo.caption = params[:caption]
+    @photo.photo_source.attach(params[:photo_source])
+    @photo.save
     render json: @photo, status: 201
   end
 

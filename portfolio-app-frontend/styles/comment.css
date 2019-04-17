@@ -1,0 +1,25 @@
+.comment-list {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0;
+  margin: 10px;
+  margin-left: 0;
+}
+
+.comment-list span {
+  font-weight: bold;
+}
+
+#inputComment {
+  border: none;
+  padding: 3px 3px 5px 3px;
+}
+
+/* Post Button */
+.btn-outline-dark {
+  padding: 3px 7px 3px 5px;
+}
+
+input:focus {
+  outline: none;
+}

@@ -7,6 +7,7 @@ const linkedin = document.getElementById('linkedin');
 const github = document.getElementById('github');
 const instagram = document.getElementById('instagram');
 const contactForm = document.getElementById('contactForm');
+const pleaseDont = document.getElementById('pleaseDont');
 
 
 //// ----------  EVENT LISTENERS  ---------- ////
@@ -17,8 +18,10 @@ github.addEventListener('click', (ev) => fade(ev.target.parentElement));
 instagram.addEventListener('click', (ev) => fade(ev.target.parentElement));
 contactForm.addEventListener('submit', (ev) => {
   ev.preventDefault();
-  fade(ev.target.parentElement)
+  fade(ev.target.parentElement);
+  pleaseDont.style.display = "block";
 });
+
 
 
 
@@ -34,3 +37,6 @@ function fade(element) {
     op -= op * 0.4;
   }, 50);
 }
+
+// Initialize with Please Don't hidden
+pleaseDont.style.display = "none";

@@ -1,0 +1,19 @@
+#likes span {
+  font-weight: bold;
+}
+
+.like-button {
+  border: none !important;
+}
+
+#heart {
+}
+
+#heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}

@@ -3,32 +3,18 @@
   display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0,0,0,0.3); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  overflow-y: scroll;
 }
 
+
+/* ------------- Show Photo Page ------------- */
 .wrapper {
   height: 24px;
 }
 
-.header {
-  padding: 10px;
-  text-align: left;
-  background: gray;
-  color: white;
-  font-size: 30px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: gray;
-}
 #caption {
   color: gray;
   font-style: italic;
@@ -85,6 +71,11 @@
   background-color: white;
 }
 
+.btn-lg {
+  width: auto;
+  margin: auto;
+}
+
 .gallery-card {
   height: 200px;
   width: 200px;
@@ -93,10 +84,15 @@
   margin: 20px;
   border-radius: 10px;
   cursor: pointer;
+  transition: transform .1s;
+}
+
+.gallery-card:hover {
+  transform: scale(1.1);
 }
 
 .gallery-card img {
-  height: 200px;
+  height: 350px;
   width: auto;
   position: absolute;
   top: -9999px;
@@ -107,19 +103,22 @@
 }
 
 .photo-card {
-  width: auto;
-  padding: 25px;
+  width: 70%;
+  padding: 30px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 10px;
-  margin: 50px 50px auto 50px;
-
+  margin: 50px 50px 50px 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .photo-card img {
   height: auto;
-  width: 100%;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: auto;
+  max-height: 90vh;
+  display: block;
 }

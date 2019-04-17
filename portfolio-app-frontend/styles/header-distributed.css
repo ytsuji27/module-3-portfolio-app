@@ -1,0 +1,48 @@
+.header-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+  padding: 20px 40px 20px;
+	overflow: hidden;
+	position: relative;
+}
+
+/* Left Side (Logo) */
+.header-distributed .header-left {
+  float: left;
+}
+
+.header-distributed h1 {
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0 0 0;
+  font-size: 60px;
+}
+
+.header-distributed h1 span{
+	color:  red;
+}
+
+/* Right Side  */
+.header-distributed .header-right{
+	float: right;
+	position: relative;
+  padding: 25px;
+}
+
+.header-distributed .header-right p{
+	display: inline-block;
+	vertical-align: top;
+	color: #ffffff;
+  font: bold 16px sans-serif;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+#logoutOption {
+  font-size: 10px;
+  cursor: pointer;
+}

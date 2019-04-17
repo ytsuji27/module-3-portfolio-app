@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" href="styles/footer-distributed-with-contact-form.css">
+    <link rel="stylesheet" href="styles/header-distributed.css">
+    <link rel="stylesheet" href="styles/comment.css">
+    <link rel="stylesheet" href="styles/likes.css">
+    <link rel="stylesheet" href="styles/new-photo.css">
+    <link rel="stylesheet" href="styles/gallery.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
   </head>
@@ -16,35 +21,44 @@
   <body>
     <div id="page-container">
 
-      <!-- Header -->
-      <div class="header">
-        <h1>Not Instagram</h1>
-      </div>
+      <!-- Header -------------------------------------------->
+      <header class="header-distributed">
+
+        <div class="header-left">
+          <h1><span>Not</span>Instagram</h1>
+        </div>
+
+        <div class="header-right">
+          <p id="greeting"></p><br>
+          <p id="logoutOption"></p>
+  			</div>
+
+      </header>
 
 
-      <!-- Photos -->
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div id="allPhotos">
-            </div>
+      <!-- Photos (MAIN GALLERY) --------------------------------->
+
+      <div class="container">
+        <div id="allPhotos" class="gallery">
+          <div id="newPhotoCard" class="gallery-card add-photo">
+            <a id="plus" class="fa fa-plus fa-3x"></a>
           </div>
         </div>
       </div>
 
-      <!-- New Photo Form -->
-      <div class="newPhotoForm">
-        <form id="newPhoto">
-          <h5>Add a new Photo!</h5>
-          <label for="caption">Caption</label>
-          <input type="caption" id="inputCaption" placeholder="Caption"><br>
-          <label for="user">User</label>
-          <input type="file" id="photo_source" accept="image/jpeg">
-          <button type="submit">Upload</button>
+
+      <!-- New Photo Form (Overlay) ---------------------------->
+      <div id="newPhotoDiv" class="overlay text-center">
+        <form id="newPhoto" class="form-photo">
+          <h5 class="h3 mb-3 font-weight-normal">Add a new Photo!</h5>
+          <label for="caption" class="sr-only">Caption</label>
+          <input type="file" id="photo_source" accept="image/jpeg" class="file-upload">
+          <input type="text" id="inputCaption" class="form-control" placeholder="Caption">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
         </form>
       </div>
 
-      <!-- Login Page Overlay -->
+      <!-- Login Page (Overlay) ------------------------------->
       <div id="loginPage" class="overlay text-center">
         <form id ="loginForm" class="form-signin">
           <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -54,21 +68,22 @@
         </form>
       </div>
 
-      <!-- Show Photo Page Overlay -->
+      <!-- Show Photo Page Overlay -------------------------->
       <div id="showPhoto" class="overlay">
+        <div id="mainPhoto"></div>
       </div>
 
 
-      <!-- Footer -->
+      <!-- Footer ------------------------------------------->
       <footer class="footer-distributed">
 
         <div class="footer-left">
-  				<h3>Not<span>Instagram</span></h3>
+  				<h3><span>Not</span>Instagram</h3>
   				<div class="footer-icons">
   					<a><i id="facebook" class="fa fa-facebook"></i></a>
   					<a><i id="twitter" class="fa fa-twitter"></i></a>
   					<a><i id="linkedin" class="fa fa-linkedin"></i></a>
-  					<a><i id="github" class="fa fa-github"></i></a>
+  					<a><i id="github" class="fa fa-github-alt"></i></a>
   					<a><i id="instagram" class="fa fa-instagram"></i></a>
   				</div>
   			</div>
@@ -80,14 +95,18 @@
   					<textarea name="message" placeholder="Message"></textarea>
   					<button>Send</button>
   				</form>
-          <span>Please Don't<span>
   			</div>
+
+        <h1 class="footer-right-behind" id="pleaseDont">Please Don't</h1>
+
   		</footer>
 
 
 
     <script defer type="text/javascript" src='src/index.js'></script>
     <script defer type="text/javascript" src='src/footer.js'></script>
+    <script defer type="text/javascript" src='src/comment.js'></script>
+    <script defer type="text/javascript" src='src/likes.js'></script>
     </div>
   </body>
 </html>

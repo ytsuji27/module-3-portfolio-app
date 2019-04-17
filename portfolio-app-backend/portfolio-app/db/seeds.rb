@@ -21,3 +21,11 @@ photo3 = Photo.create(
   user: user1
 )
 photo3.photo_source.attach(io: File.open("app/assets/photos/IMG_7071.jpg"), filename: "IMG_7071.jpg")
+
+
+#### COMMENTS (TESTING ONLY) ####
+comment1 = Comment.create(
+  content: "Nice!",
+  user: user1,
+  photo: photo1
+)

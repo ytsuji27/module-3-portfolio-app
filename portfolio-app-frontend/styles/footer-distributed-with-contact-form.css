@@ -9,6 +9,8 @@
 	padding: 50px 60px 40px;
 	margin-top: 80px;
 	overflow: hidden;
+
+	position: relative;
 }
 
 /* Footer left */
@@ -26,7 +28,7 @@
 }
 
 .footer-distributed h3 span{
-	color:  #5383d3;
+	color:  red;
 }
 
 /* Footer links */
@@ -88,10 +90,10 @@
 	color: #ffffff;
 }
 
-.footer-distributed .footer-right span{
-	float: right;
+.footer-distributed .footer-right-behind {
+	color: white;
 	position: relative;
-	z-index: 0;
+	text-size: 14px;
 }
 
 /* The contact form */
