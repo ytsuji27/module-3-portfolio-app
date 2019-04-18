@@ -2,6 +2,8 @@
 
 NotInstagram is a Single Page Application (SPA) that lets users upload, comment and like photos. It was built with a Ruby on Rails based backend and a Javascript based frontend.
 
+Deployed on Heroku [here](https://peaceful-springs-16223.herokuapp.com/)
+
 ![Main Page](portfolio-app-backend/portfolio-app/app/assets/screenshots/mainPage.png)
 
 ## Features
