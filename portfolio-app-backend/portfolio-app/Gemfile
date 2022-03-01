@@ -31,7 +31,7 @@ gem 'rack-cors'
 gem 'active_model_serializers'
 
 gem 'mini_magick', '~> 4.9.4'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem "aws-sdk-s3", require: false
 
 group :development, :test do
